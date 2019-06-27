@@ -1,0 +1,41 @@
+<div class=" col-sm-12 col-md-8 col-lg-8 col-xl-8 ml-auto mr-auto mt-5">
+
+
+  <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="errorMode && !successMode">
+    <strong><i class="fas fa-exclamation-circle"></i> {{errorMessage}}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="successMode && !errorMode">
+    <strong><i class="fas fa-spinner fa-spin"></i> You are  logged in successflly, you will be redirected! </strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <i class="fas fa-user-tag"></i> User authentication
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="login(email, password)">
+        <div class="form-group">
+          <label for="InputEmail">Email address</label>
+          <input #email type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="InputPassword">Password</label>
+          <input #password type="password" class="form-control" id="InputPassword" placeholder="Password">
+        </div>
+        <button id="login-btn" type="submit" class="btn btn-primary btn-sm d-block"><i class="fas fa-sign-in-alt"></i> Login</button>
+      </form>
+    </div>
+  </div>
+
+
+
+</div>
+
+

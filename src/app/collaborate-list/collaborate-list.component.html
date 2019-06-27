@@ -1,0 +1,27 @@
+<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-5"
+     *ngIf="topics != null && topics.length == 0; else  data">
+  <div class="alert alert-info display-3 font-weight-bold text-center">
+    <i class="fas fa-spinner fa-spin"></i> Loading, please wait
+  </div>
+</div>
+
+<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-5" *ngIf="topics == null">
+  <div class="alert alert-danger display-5 font-weight-bold text-center">
+    <i class="fas fa-exclamation"></i> No document has been found!
+  </div>
+</div>
+
+<ng-template #data>
+  <div class="row">
+
+    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-2 mb-2" *ngFor="let topic of topics">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{topic.title}}</h5>
+          <a [routerLink]="[topic.id]" class="btn btn-primary"><i class="fas fa-chevron-circle-up"></i> Collaborate</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ng-template>
